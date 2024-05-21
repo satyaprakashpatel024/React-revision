@@ -4,11 +4,16 @@ import { useState } from 'react';
 function App() {
 	let [counter, setCounter] = useState(0);
 	const Increment = () => {
-		setCounter(counter+1);
+		setCounter(counter + 1);
 		console.log('Increment : ', counter);
 	};
 	const Decrement = () => {
-		setCounter(counter-1);
+		if (counter == 0) {
+			setCounter(counter);
+			window.alert('cann"t be less than 0');
+		} else {
+			setCounter(counter - 1);
+		}
 		console.log('Decrement : ', counter);
 	};
 
