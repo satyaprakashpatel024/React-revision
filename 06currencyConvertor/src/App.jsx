@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
 import useCurrencyInfo from './hooks/useCurrencyInfo';
-import  InputBox  from './components/InputBox';
+import InputBox from './components/InputBox';
 import { useState } from 'react';
 function App() {
 	const [amount, setAmount] = useState(0);
