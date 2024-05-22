@@ -2,10 +2,12 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-	let [counter, setCounter] = useState(0);
+	const [counter, setCounter] = useState(0);
 	const Increment = () => {
-		setCounter(counter + 1);
-		console.log('Increment : ', counter);
+		setCounter((prevCounter) => prevCounter + 1);
+		setCounter((prevCounter) => prevCounter + 1);
+		setCounter((prevCounter) => prevCounter + 1);
+		setCounter((prevCounter) => prevCounter + 1);
 	};
 	const Decrement = () => {
 		if (counter == 0) {
@@ -14,7 +16,6 @@ function App() {
 		} else {
 			setCounter(counter - 1);
 		}
-		console.log('Decrement : ', counter);
 	};
 
 	return (
