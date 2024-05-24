@@ -30,23 +30,19 @@ import Github, { githubInfo } from './components/github/Github';
 // ])
 
 const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route  path='/' element={<Layout />}>
-      <Route path='/' element={<Home />} />
-      <Route path='about' element={<About />} />
-      <Route path='contact' element={<ContactUs />} />
-      <Route path='user/:userid' element={<User />}/>
-      <Route 
-        loader={githubInfo}
-        path='github' 
-        element={<Github />} 
-      />
-    </Route>
-  )
-)
+	createRoutesFromElements(
+		<Route path='/' element={<Layout />}>
+			<Route path='/' element={<Home />} />
+			<Route path='about' element={<About />} />
+			<Route path='contact' element={<ContactUs />} />
+			<Route path='user/:userid' element={<User />} />
+			<Route loader={githubInfo} path='github' element={<Github />} />
+		</Route>
+	)
+);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+	<React.StrictMode>
+		<RouterProvider router={router} />
+	</React.StrictMode>
+);
