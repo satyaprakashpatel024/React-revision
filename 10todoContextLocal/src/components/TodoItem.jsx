@@ -1,21 +1,20 @@
-/* eslint-disable react/prop-types */
-import  { useState } from 'react';
+import { useState } from 'react';
 import { useTodo } from '../contexts';
-
+import PropTypes from 'prop-types';
 function TodoItem({ todo }) {
 	const { updateTodo, deleteTodo, toggleTodo } = useTodo();
-    
+
 	const [todoMsg, setTodoMsg] = useState(todo?.todo);
 	const [isTodoEditable, setIsTodoEditable] = useState(false);
-	
-    const editTodo = () => {
-		updateTodo(todo?.id, {...todo, todo: todoMsg });
+
+	const editTodo = () => {
+		updateTodo(todo?.id, { ...todo, todo: todoMsg });
 		setIsTodoEditable(false);
 	};
 
-    const toggleCompleted = ()=>{
-        toggleTodo(todo?.id);
-    }
+	const toggleCompleted = () => {
+		toggleTodo(todo?.id);
+	};
 
 	return (
 		<div className={`flex border border-black/10 rounded-lg px-3 py-1.5 gap-x-3 shadow-sm shadow-white/50 duration-300  text-black ${todo.completed ? 'bg-[#c6e9a7]' : 'bg-[#ccbed7]'}`}>
@@ -48,5 +47,13 @@ function TodoItem({ todo }) {
 		</div>
 	);
 }
+
+TodoItem.propTypes = {
+	todo: PropTypes.shape({
+		id: PropTypes.number.isRequired,
+		todo: PropTypes.string.isRequired,
+		completed: PropTypes.bool.isRequired,
+	}).isRequired,
+};
 
 export default TodoItem;
