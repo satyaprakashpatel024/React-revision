@@ -6,8 +6,8 @@ function App() {
 	return (
 		<UserContextProvider>
 			<h1 className='bg-blue-500'>React with context API</h1>
-      <Login />
-      <Profile />
+			<Login />
+			<Profile />
 		</UserContextProvider>
 	);
 }
