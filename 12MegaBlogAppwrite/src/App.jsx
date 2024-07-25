@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -25,11 +26,11 @@ function App() {
 	}, []);
 
 	return !loading ? (
-		<div className='min-h-screen flex flex-wrap content-between bg-gray-400'>
+		<div className='h-screen w-full flex flex-wrap content-between bg-gray-400'>
 			<div className='w-full block'>
 				<Header />
 				<main>
-					TODO: <Outlet />
+					<Outlet />
 				</main>
 				<Footer />
 			</div>
