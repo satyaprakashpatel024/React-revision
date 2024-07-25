@@ -1,19 +1,16 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import appwriteService from '../appwrite/config';
 import { Button, Container } from '../components';
 import { useSelector } from 'react-redux';
-import DOMPurify from 'dompurify';
 import parse from 'html-react-parser';
 
 export default function Post() {
 	const [post, setPost] = useState(null);
 	const { slug } = useParams();
 	const navigate = useNavigate();
-	let content = '';
 	const userData = useSelector((state) => state.auth.userData);
+	const isAuthor = post && userData ? post.userid === userData.$id : false;
 
 	useEffect(() => {
 		if (slug) {
@@ -23,8 +20,6 @@ export default function Post() {
 			});
 		} else navigate('/');
 	}, [slug, navigate]);
-
-	const isAuthor = post && userData ? post.userid === userData.$id : false;
 
 	const deletePost = () => {
 		appwriteService.deletePost(post.$id).then((status) => {

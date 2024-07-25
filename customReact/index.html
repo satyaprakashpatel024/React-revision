@@ -1,12 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>custom react app</title>
-</head>
-<body>
-    <div id="root"></div>
-    <script src="./customreact.js"></script>
-</body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>custom react app</title>
+	</head>
+	<body>
+        <div id="content"></div>
+		<!-- <div id="root"></div>
+    <script src="./customreact.js"></script> -->
+		<script>
+			let htmlContent = `<section class="main">htmlContent
+			<h2 id="introduction-to-mern-stack" style="text-align: justify">Introduction to MERN Stack</h2>
+			<p style="text-align: justify">
+				The demand for web developers has grown over 8 percent in the last decade. Web technology keeps advancing each day and there is a growing demand for seamless and enriching web
+				applications. Developers have built different technology through which one can build interactive and responsive web applications. Popularly, web developers use<span
+					style="color: #000000"
+				>
+					javascript </span
+				>and HTML to work on advanced technology like the MERN stack which is used to build highly robust full stack applications.
+			</p>
+			<p style="text-align: justify">In this article we will understand what the MERN stack is, and more about this popular and trending javascript stack.</p>
+		</section>
+		<section class="main">
+			<h2 id="what-is-mern-stack-">What is MERN Stack?</h2>
+			<p>
+				The full form of MERN is MongoDB, ExpressJS, ReactJS and NodeJS. MERN stack is a popular Javascript stack that is used for building faster and reliable full-stack web applications
+				which means it provides complete end-to-end development.
+			</p>
+			<p>
+				It provides full front-end development support along with a robust back-end and database management system. It is designed to help build full-stack applications using just one language
+				which is javascript. Javascript is known for its simplicity and speed.
+			</p>
+			<p>
+				It is backed by a vast community of developers and can be used in almost every field of development such as cross platform app development, game development, machine learning, front
+				end development, backend development etc.
+			</p>
+			<p>ReactJS forms the front-end(client-side) of the application, NodeJS and ExpressJS form the back-end(server-side) and MongoDB is the NoSQL database used in this tech stack.</p>
+			<p>Let us discuss these four MERN stack components in a little more detail:</p>
+			<h3 id="mongodb">MongoDB</h3>
+			<p>
+				If your application is collecting and storing data, you may need a database that works and integrates well with React, Node, and Express. Here is where MongoDB comes into the picture.
+				MongoDB is a document-oriented (NoSQL) database that stores data similar to the JSON format which means that data is stored as &ldquo;key&rdquo; : &ldquo;value&rdquo; pairs. It is
+				flexible and allows the user to create schema, collections, and documents. MongoDB can store vast volumes of data and thus makes it scalable.
+			</p>
+			<h3 id="nodejs">NodeJS</h3>
+			<p>
+				JavaScript runs predominantly only on the browser. With NodeJS which provides a JavaScript runtime environment, we can run our JavaScript code on the server-side (Outside the browser).
+				It is based on an event driven, non-blocking I/O model.
+			</p>
+			<p>
+				NodeJS works well with ExpressJS to build a flexible, highly scalable, and robust back-end. Users can download thousands of free packages from NPM i.e. Node Package Manager, to add
+				more features and functionality that developers might want to add. NodeJS along with its framework- ExpressJS make the server-side (Backend) component of the MERN stack.
+			</p>
+			<h3 id="expressjs">ExpressJS</h3>
+			<p>
+				Now let us talk about the back-end. Back-end(server-side) controls the main logic of the web application, handles the database functions and is a layer between the front-end and the
+				database. ExpressJS is an open source NodeJS framework.
+			</p>
+			<p>
+				It is a fast, flexible and minimalist NodeJS framework that makes it easier and simpler to write back-end code that helps in adding functionality to make powerful web applications and
+				APIs. It helps us to connect the database as well as the front-end(ReactJS) to our backend. Express has the biggest community in Nodejs and helps build robust APIs.
+			</p>
+			<h3 id="reactjs">ReactJS</h3>
+			<p>
+				The front-end part of the MERN stack- ReactJS is an open-source javascript library by Facebook for front-end/user interface development. ReactJS is used for creating dynamic user
+				interfaces in Javascript.
+			</p>
+			<p>
+				It uses component architecture where users can create components(for example header components) and reuse these components when needed, this increases code reusability and reduces
+				redundancy.
+			</p>
+			<p>
+				It is easy to link the front-end to the backend APIs in React and render this data as HTML. ReactJS is fast and has high performance, It can render dynamic content to the user and is
+				much easier to learn than other frameworks like Angular or Vue.
+			</p>
+		</section>
+		<section class="main">
+			<h2 id="how-does-mern-stack-work-" style="text-align: justify">How Does MERN Stack Work?</h2>
+			<p style="text-align: justify">
+				To understand how MERN works, let&rsquo;s break this architecture into 2 parts- front-end and the back-end. The diagram below will help you understand the structure of the MERN stack.
+			</p>
+			<section class="main">
+				<h3 id="the-back-end-of-the-mern-stack">The back-end of the MERN stack</h3>
+				<p>
+					MongoDB, NodeJS and ExpressJS are used to build the server-side/backend of the application. This includes database management, server-side script, HTTP requests etc. With NodeJS
+					and ExpressJS developers create the REST APIs which is a URL that performs certain functions like create, read, write and delete data from the MongoDB database (also known as CRUD
+					operations). These URLs represent functions, with HTTP calls as the originators.
+				</p>
+				<p>
+					The data is sent through these requests and the server in return will be responsible for modification in the database and sending everything back in JSON(Javascript Object
+					Notation) format which is a format that is very practical because it is readable by JavaScript.
+				</p>
+				<p>
+					The network security aspect of a web application is handled in the backend here. User authentication and authorization are controlled here which can be done using packages like JWT
+					or PassportJS. User authentication is the process of the user to verify their identity.
+				</p>
+				<p>
+					User authorization is what aspects of the web or data the user can access. NodeJS and express allow you to create routes for these APIs and store your password after salting
+					(hashing) it. This data can be stored in the MongoDB database as user data.
+				</p>
+				<p>Now let us jump into the second part of the application, the front-end.</p>
+				<h3 id="the-front-end-of-the-mern-stack">The front-end of the MERN stack</h3>
+				<p>
+					ReactJS is the front end javascript library used in the MERN stack that renders the UI to the users. React&rsquo;s job is to execute http requests. With React, developers make AJAX
+					calls (Asynchronous javascript and XML) which is a technique used to make asynchronous calls (for example API calls).
+				</p>
+				<p>
+					The data comes from the backend APIs via these AJAX calls and is used to establish a connection between the front-end and the back-end. The data from the MongoDB database can be
+					shown to the front-end and thus users can interact with the web application.
+				</p>
+			</section>
+			<section class="main">
+				<h2 id="why-choose-mern-stack-" style="text-align: justify">Why Choose MERN Stack?</h2>
+				<ul style="text-align: justify">
+					<li>With just one primary programming language, Javascript, one can build highly efficient and scalable full stack applications using the MERN stack.</li>
+					<li>The MERN stack ensures a very smooth development process.</li>
+					<li>
+						MERN stack is open sourced and is backed by a huge community of developers, and thus you can find many amazing libraries, and free npm packages, and your doubts are solved
+						easily.
+					</li>
+					<li>MERN stack even has many pre-built testing tools.</li>
+					<li>One can build complex applications like e-commerce websites, video calling apps, and even a social media website, etc. using the MERN stack.</li>
+				</ul>
+				<p style="text-align: justify">There are many other similar stacks available for building full-stack applications such as:</p>
+				<ul style="text-align: justify">
+					<li>MEAN stack (MongoDB, ExpressJS, AngularJS and NodeJS),</li>
+					<li>MEVN stack (MongoDB, ExpressJS, VueJS and NodeJS) and the</li>
+					<li>LAMP stack (Linux, Apache, MySQL and PHP).</li>
+				</ul>
+				<p style="text-align: justify">
+					All these stacks can be used to build full stack applications but the MERN stack is highly in demand and most popular among developers. The stack is comparatively easier to learn
+					and is well-integrated.
+				</p>
+				<h2 id="advantages-of-mern-stack" style="text-align: justify">Advantages of MERN Stack</h2>
+				<p style="text-align: justify">
+					With MongoDB under the hood as a highly scalable and robust NoSQL database, ExpressJS and NodeJS for fast and flexible backend, and ReactJS for dynamic and swift UI development,
+					MERN stack is one of the best Full Stack development suites.
+				</p>
+				<p style="text-align: justify">Now let&rsquo;s talk about the advantages of using the MERN stack,</p>
+				<ul style="text-align: justify">
+					<li>
+						The most exciting aspect of the MERN stack is how well the four stack is integrated. MongoDB works supremely well with NodeJS, and makes storing, manipulating, and representing
+						JSON data at every tier of your application extremely easy.
+					</li>
+					<li>MongoDB databases can be deployed easily for increased scalability using the MongoDB atlas which can be done with just a few clicks.</li>
+					<li>
+						ExpressJS (which runs on NodeJS) works incredibly well in making APIs and producing CRUD operations(Create,Read,Update and Delete). The communication between this server-side
+						and the front end is through JSON.
+					</li>
+					<li>
+						ReactJS( frontend JavaScript framework) is used for building interactive user interfaces in HTML, and communicating with a remote server to display the JSON data to the user.
+						The blend implies that JSON data streams normally from front to back, making it fast to build on and easy to troubleshoot.
+					</li>
+					<li>
+						With just a grasp of one language, Javascript, the basic idea of a JSON document, and an understanding of the NoSQL database(like MongoDB) one can easily learn and build
+						applications using the MERN stack.**
+					</li>
+				</ul>
+				<p style="text-align: justify">Now let&rsquo;s look a little deeper into the advantages of each technology:-</p>
+				<h3 id="mongodb-&ndash;" style="text-align: justify">MongoDB &ndash;</h3>
+				<p style="text-align: justify">Key benefits and reasons to choose MongoDB are:-</p>
+				<ul style="text-align: justify">
+					<li>Document Oriented Storage( Data is stored in the form of JSON style documents)</li>
+					<li>Index on any attribute</li>
+					<li>Auto-Sharding(Splitting large databases into separate entities for faster retrieval)</li>
+					<li>Rich queries</li>
+					<li>Fast in-place updates</li>
+					<li>
+						MongoDB is a NoSQL database that has become popular because it stores data in simple straightforward forms that are easier to understand unlike the type of data models used in
+						SQL databases.
+					</li>
+					<li>No complex Joins</li>
+					<li>Easy to scale</li>
+					<li>Schema less design &minus; MongoDB is a document database in which one collection holds different documents which is similar to JSON called &ldquo;BSON&rdquo;.</li>
+					<li>Many tech companies use MongoDB like Adobe, eBay and Facebook</li>
+				</ul>
+				<h3 id="expressjs-&ndash;" style="text-align: justify">ExpressJS &ndash;</h3>
+				<p style="text-align: justify">Key benefits and reasons to choose ExpressJS are:-</p>
+				<ul style="text-align: justify">
+					<li>Easy to integrate with MongoDB,Redis,MySQL etc</li>
+					<li>Allows you to define error handling middleware</li>
+					<li>Vast open source community</li>
+					<li>Allows you to create a REST API server with ease</li>
+					<li>Best NodeJS framework for server-side programming</li>
+					<li>Easy to build and deploy API</li>
+					<li>Top tech companies like PayPal, IBM, and Walmart use the Express framework</li>
+					<li>Easy to scale application</li>
+				</ul>
+				<h3 id="nodejs-&ndash;" style="text-align: justify">NodeJS &ndash;</h3>
+				<p style="text-align: justify">Key benefits and reasons to choose NodeJS are:-</p>
+				<ul style="text-align: justify">
+					<li>Asynchronous and event-driven</li>
+					<li>Provides the advantage of caching</li>
+					<li>Ability to handle multiple requests</li>
+					<li>Easy to scale and deploy</li>
+					<li>Easy to learn</li>
+					<li>Known for providing high performance</li>
+					<li>Top tech companies like Uber, Trello, and Paypal use NodeJS</li>
+					<li>Support of large and active community</li>
+				</ul>
+				<h3 id="reactjs-&ndash;" style="text-align: justify">ReactJS &ndash;</h3>
+				<p style="text-align: justify">Key benefits and reasons to choose ReactJS are:-</p>
+				<ul>
+					<li style="text-align: justify">Speed</li>
+					<li style="text-align: justify">Flexibility</li>
+					<li style="text-align: justify">Performance</li>
+					<li style="text-align: justify">Usability</li>
+					<li style="text-align: justify">Easy to learn</li>
+					<li style="text-align: justify">Helps build rich user interfaces</li>
+					<li style="text-align: justify">Offers fast rendering</li>
+					<li style="text-align: justify">Strong community support</li>
+					<li style="text-align: justify">Follows component structure where these components can be reused</li>
+					<li style="text-align: justify">Used by many tech giants like Instagram, Airbnb and Skype.</li>
+				</ul>
+			</section>
+		</section>`
+        document.getElementById('content').innerHTML = htmlContent;
+		</script>
+	</body>
 </html>
