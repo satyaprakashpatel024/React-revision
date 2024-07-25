@@ -26,8 +26,11 @@ export class AuthService {
 	}
 
 	async login({ email, password }) {
+		console.log(email,password);
 		try {
-			return await this.account.createEmailSession(email, password);
+			const data = await this.account.createEmailPasswordSession(email, password);
+			console.log(data,'sdfghj');
+			return data;
 		} catch (error) {
 			throw error;
 		}
